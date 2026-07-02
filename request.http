@@ -1,0 +1,84 @@
+POST http://localhost:3001/products
+Content-Type: application/json
+
+{
+  "name": "바람막이",
+  "category": "FASHION",
+  "price": 129000,
+  "brand": "코드잇",
+  "stock": 10
+}
+
+###
+GET http://localhost:3001/users
+
+###
+GET http://localhost:3001/users/5fac031e-13f9-4de0-8f93-bcb34edecbcc
+
+###
+PATCH http://localhost:3001/products/08e52a39-a8c1-4a88-b7c7-d52f07ec3def
+Content-Type: application/json
+
+{
+  "lastName": "Hong",
+  "firstName": "Gildong"
+}
+
+###
+DELETE http://localhost:3001/products/08e52a39-a8c1-4a88-b7c7-d52f07ec3def
+
+###
+GET http://localhost:3001/orders/9fde1702-08d7-407c-8e6e-65e24f6a8237
+
+###
+POST http://localhost:3001/users
+Content-Type: application/json
+
+{
+  "email": "hong@gildong.com",
+  "firstName": "Gildong",
+  "lastName": "Hong",
+  "address": "서울시 송파구",
+  "userPreference": {
+    "receiveEmail": true
+  }
+}
+
+###
+PATCH http://localhost:3001/users/5a5a54cb-dd46-4c27-9920-58e8133d0328
+Content-Type: application/json
+
+{
+  "firstName": "길동",
+  "lastName": "홍",
+  "userPreference": {
+    "receiveEmail": false
+  }
+}
+
+###
+POST http://localhost:3001/users/5a5a54cb-dd46-4c27-9920-58e8133d0328/saved-products
+Content-Type: application/json
+
+{
+  "productId": "17cc4f9c-1e71-4782-914a-c8a12dc6f94b"
+}
+
+###
+GET http://localhost:3001/users/5a5a54cb-dd46-4c27-9920-58e8133d0328/saved-products
+Content-Type: application/json
+
+###
+POST http://localhost:3001/orders
+Content-Type: application/json
+
+{
+  "userId": "5a5a54cb-dd46-4c27-9920-58e8133d0328",
+  "orderItems": [
+    {
+      "productId": "",
+      "unitPrice": ,
+      "quantity": ,
+    },
+  ]
+}
